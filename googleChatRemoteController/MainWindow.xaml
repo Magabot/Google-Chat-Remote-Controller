@@ -1,0 +1,31 @@
+﻿<Window x:Class="googleChatRemoteController.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="googleChatRemoteController" Height="320" Width="680" KeyDown="updateKeyboard" Background="White" Name="googleChatRemoteController" Icon="/googleChatRemoteController;component/icon.ico" IsEnabled="True">
+    <Canvas Name="MainCanvas" KeyDown="updateKeyboard" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="640">
+        <Expander Canvas.Left="294" Canvas.Top="12" FontSize="16" Header="Sign in" Height="220" IsExpanded="True" Name="expanderGoogleChatSignIn" Width="323" Expanded="manageCollapses" Collapsed="manageCollapses">
+            <Grid Height="189">
+                <Label Content="Username" FontSize="14" FontStyle="Normal" FontWeight="Bold" HorizontalAlignment="Left" Margin="18,6,0,150" Name="labelUsername" Width="283" />
+                <Label Content="Password" FontSize="14" FontStyle="Normal" FontWeight="Bold" HorizontalAlignment="Left" Margin="18,71,0,85" Name="labelPassword" Width="283" />
+                <Button Background="#FF357AE8" BorderBrush="White" BorderThickness="1" Click="buttonSignIn_Click" ClickMode="Press" Content="Sign in" FontSize="15" Foreground="White" Height="32" HorizontalAlignment="Left" Margin="18,145,0,0" Name="buttonGoogleChatSignIn" Padding="0" VerticalAlignment="Top" Width="63" />
+                <Button Background="#FFD14836" BorderBrush="White" BorderThickness="1" Click="buttonSignOut_Click" ClickMode="Press" Content="Sign out" FontSize="15" Foreground="White" Height="32" HorizontalAlignment="Left" Margin="228,145,0,0" Name="buttonGoogleChatSignOut" Padding="0" VerticalAlignment="Top" Visibility="Visible" Width="73" IsEnabled="False" />
+                <PasswordBox Height="32" HorizontalAlignment="Left" Margin="18,97.222,0,0" Name="passwordBoxGoogleChat" VerticalAlignment="Top" Width="283" />
+                <CheckBox Content="Remember me" Height="15.333" HorizontalAlignment="Left" Margin="86.889,154.262,0,0" Name="checkBoxGoogleChatRememberMe" VerticalAlignment="Top" Width="100" FontSize="12" IsChecked="True" />
+                <TextBox Height="32" HorizontalAlignment="Left" Margin="18,33,0,0" Name="textBoxGoogleChatUsername" VerticalAlignment="Top" Width="283" />
+            </Grid>
+        </Expander>
+        <Expander Canvas.Left="293" Canvas.Top="238" Focusable="False" FontSize="16" Header="Google Chat" Height="205" IsExpanded="False" Name="expanderGoogleChat" Width="323" Expanded="manageCollapses" Collapsed="manageCollapses">
+            <Grid Height="179" Background="White">
+                <ListBox FontSize="12" Height="120" HorizontalAlignment="Left" Margin="7,50,0,0" Name="listGoogleChatEvents" VerticalAlignment="Top" Width="308" />
+                <Label Content="Selected user" FontSize="12" FontStyle="Normal" FontWeight="Bold" HorizontalAlignment="Left" Margin="7,10,0,235" Name="labelSelectedUser" Width="94.25" />
+                <ComboBox FontSize="11" Height="24" HorizontalAlignment="Left" Margin="94,10,0,0" Name="comboBoxSelectedUser" VerticalAlignment="Top" Width="221" IsEditable="False" SelectionChanged="comboBoxSelectedUser_SelectionChanged" />
+                <Label Content="Selected user" FontSize="12" FontStyle="Normal" FontWeight="Bold" HorizontalAlignment="Left" Margin="7,10,0,136" Name="label1" Width="94.25" />
+            </Grid>
+        </Expander>
+        <Label Canvas.Left="12" Canvas.Top="94" Content="No order was sent" FontSize="14" FontWeight="Normal" Height="42" Name="labelOrderValue" Width="168" IsEnabled="True" />
+        <Label Canvas.Left="12" Canvas.Top="71" Content="Last order sent:" Height="32" Name="labelLastOrderSent" Width="154" FontWeight="Bold" IsEnabled="True" />
+        <Label Canvas.Left="10" Canvas.Top="10" Content="Sendind orders to:" Height="32" Name="labelSendingOrdersTo" Width="154" FontWeight="Bold" IsEnabled="True" />
+        <Label Canvas.Left="10" Canvas.Top="31" Content="No user selected" FontSize="14" FontWeight="Normal" Height="42" Name="labelSendingOrdersToValue" Width="170" IsEnabled="True" />
+        <Button Canvas.Left="93" Canvas.Top="129" Content="Expand &gt;&gt;&gt;" Height="23" Name="buttonExpand" Width="87" Background="#FF52B435" Foreground="White" BorderBrush="{x:Null}" Click="buttonExpand_Click" IsEnabled="True" />
+    </Canvas>
+</Window>
